@@ -3,7 +3,7 @@
 GET  http://localhost:5000/api/realisateur/
 
 
-
+###
 POST http://localhost:5000/api/realisateur/add
 content-type: application/json
 
@@ -12,9 +12,8 @@ content-type: application/json
     "birthdate": "2/09/1999",
     "biography":"test"
 
-}
- ###
-
+} 
+ ### 
 PUT  http://localhost:5000/api/realisateur/update/661ff50b470a546297cbd798
 content-type: application/json
 
@@ -24,5 +23,66 @@ content-type: application/json
     "biography":"test"
 
 }
- 
+### 
 DELETE  http://localhost:5000/api/realisateur/delete/661ff50b470a546297cbd798
+
+// ----------------------------------------------------------------------------------------------------------
+###
+POST http://localhost:5000/api/film/add
+content-type: application/json
+
+{
+    
+    "title": "Titanic",
+    "releaseYear": 2001,
+    "genre": "Fantasy",
+    "directors": ["661ff932470a546297cbd79b"] 
+
+
+}
+###
+GET  http://localhost:5000/api/film/
+
+###
+DELETE  http://localhost:5000/api/film/delete/66200d98c263c4b02fcecb8e
+###
+PUT  http://localhost:5000/api/film/update/66200b4dc263c4b02fcecb88
+content-type: application/json
+
+{
+    "title": "updated film",
+    "releaseYear": 2023,
+    "genre": "Comédie",
+    "directors": ["661ff932470a546297cbd79b"]
+
+}
+
+//------------------------------------------------------------------------------------------------------------
+###
+POST http://localhost:5000/api/seance/add
+content-type: application/json
+
+{
+    "film": "66200b4dc263c4b02fcecb88",
+    "date": "2024-04-20",
+    "time": "18:00",
+    "availableSeats": 100}
+###
+GET  http://localhost:5000/api/seance/
+
+###
+PUT http://localhost:5000/api/seance/update/662018088a04c69fa21c2e72
+content-type: application/json
+
+
+{
+    "film": "66200b4dc263c4b02fcecb88",
+    "date": "2024-04-20",
+    "time": "19:00",
+    "availableSeats": 50    
+}
+###
+DELETE  http://localhost:5000/api/seance/delete/662018088a04c69fa21c2e72
+
+
+

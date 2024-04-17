@@ -1,6 +1,7 @@
 import express , {Express} from 'express'
 import realisateurRoutes from './routes/realisateurRoutes'
-
+import filmRoutes from './routes/filmRoutes'
+import seanceRoutes from'./routes/seanceRoutes'
 const Port = 5000
 const app :Express = express()
 import mongoose from 'mongoose'
@@ -9,6 +10,10 @@ import mongoose from 'mongoose'
 app.use(express.json()); 
 
 app.use('/api/realisateur' , realisateurRoutes)
+app.use('/api/film' , filmRoutes)
+app.use('/api/seance' , seanceRoutes)
+
+
 
 
 const uri = 
