@@ -19,7 +19,7 @@ const app = (0, express_1.default)();
 const mongoose_1 = __importDefault(require("mongoose"));
 app.use(express_1.default.json());
 app.use('/api/realisateur', realisateurRoutes_1.default);
-const uri = "mongodb+srv://fatma:Mokranifatma22@cluster0.m096geo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://fatma:Mokranifatma22@cluster0.dcxt85w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {

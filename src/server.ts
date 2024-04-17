@@ -1,16 +1,18 @@
 import express , {Express} from 'express'
 import realisateurRoutes from './routes/realisateurRoutes'
+
 const Port = 5000
 const app :Express = express()
 import mongoose from 'mongoose'
 
 
-app.use(express.json());
+app.use(express.json()); 
+
 app.use('/api/realisateur' , realisateurRoutes)
 
 
 const uri = 
-"mongodb+srv://fatma:Mokranifatma22@cluster0.m096geo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+"mongodb+srv://fatma:Mokranifatma22@cluster0.dcxt85w.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 
 

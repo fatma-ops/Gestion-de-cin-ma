@@ -18,11 +18,11 @@ const router = (0, express_1.Router)();
 router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const Realisateur = yield realisateur_1.default.find();
-        res.status(200).json(Realisateur);
+        res.status(200).send(Realisateur);
     }
     catch (error) {
         console.error('Erreur lors de la récupération des realisateur:', error);
-        res.status(500).json({ message: 'Erreur lors de la récupération des realisateur' });
+        res.status(500).send({ message: 'Erreur lors de la récupération des realisateur' });
     }
 }));
 router.post('/add', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -34,11 +34,42 @@ router.post('/add', (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             biography
         });
         const RealisateurEnregistre = yield nouveauRealisateur.save();
-        res.status(201).json({ message: 'Réalisateur ajouté avec succès', auteur: RealisateurEnregistre });
+        res.status(201).send({ message: 'Réalisateur ajouté avec succès', auteur: RealisateurEnregistre });
     }
     catch (error) {
         console.error('Erreur lors de l\'ajout d\'un réalisateur :', error);
-        res.status(500).json({ message: 'Erreur lors de l\'ajout du d\'réalisateur' });
+        res.status(500).send({ message: 'Erreur lors de l\'ajout du d\'réalisateur' });
     }
 }));
-exports.default = express_1.Router;
+router.delete('/delete/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const deletedRealisateur = yield realisateur_1.default.findByIdAndDelete(req.params.id);
+        if (deletedRealisateur) {
+            res.status(200).json({ message: 'Auteur supprimé avec succès' });
+        }
+        else {
+            res.status(404).json({ error: 'Auteur introuvable' });
+        }
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Une erreur est survenue lors de la suppression ' });
+    }
+}));
+router.put('/update/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const id = req.params.id;
+        const { name, birthdate, biography } = req.body;
+        console.log(name, birthdate, biography, id);
+        const realisateur = yield realisateur_1.default.findByIdAndUpdate(id, { name, birthdate, biography }, { new: true });
+        if (realisateur) {
+            res.status(200).json(realisateur);
+        }
+        else {
+            res.status(404).json({ error: 'realisateur introuvable' });
+        }
+    }
+    catch (error) {
+        res.status(500).json({ error: 'Une erreur est survenue lors de la mise à jour ' });
+    }
+}));
+exports.default = router;

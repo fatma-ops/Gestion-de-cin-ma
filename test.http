@@ -1,9 +1,28 @@
+
+
+GET  http://localhost:5000/api/realisateur/
+
+
+
 POST http://localhost:5000/api/realisateur/add
 content-type: application/json
 
 {
-    "name":"machin",
+    "name":"test",
     "birthdate": "2/09/1999",
     "biography":"test"
 
 }
+ ###
+
+PUT  http://localhost:5000/api/realisateur/update/661ff50b470a546297cbd798
+content-type: application/json
+
+{
+    "name":"test",
+    "birthdate": "2/09/1999",
+    "biography":"test"
+
+}
+ 
+DELETE  http://localhost:5000/api/realisateur/delete/661ff50b470a546297cbd798
