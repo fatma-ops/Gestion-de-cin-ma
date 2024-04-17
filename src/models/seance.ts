@@ -14,9 +14,7 @@ const SeanceSchema : Schema = new Schema ({
     date: {type:Date },
     time: {type: String},
     availableSeats: {type : Number} , 
-    }
-
-
+    
 }); 
 const SeanceModel = mongoose.model<ISession>('Session', SeanceSchema);
 

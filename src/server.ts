@@ -1,10 +1,12 @@
 import express , {Express} from 'express'
+import realisateurRoutes from './routes/realisateurRoutes'
 const Port = 5000
 const app :Express = express()
 import mongoose from 'mongoose'
 
 
 app.use(express.json());
+app.use('/api/realisateur' , realisateurRoutes)
 
 
 const uri = 

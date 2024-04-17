@@ -30,6 +30,5 @@ const SeanceSchema = new mongoose_1.Schema({
     time: { type: String },
     availableSeats: { type: Number },
 });
-;
 const SeanceModel = mongoose_1.default.model('Session', SeanceSchema);
 exports.default = SeanceModel;

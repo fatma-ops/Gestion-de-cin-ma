@@ -1,0 +1,9 @@
+POST http://localhost:5000/api/realisateur/add
+content-type: application/json
+
+{
+    "name":"machin",
+    "birthdate": "2/09/1999",
+    "biography":"test"
+
+}

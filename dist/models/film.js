@@ -25,10 +25,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const FilmSchema = new mongoose_1.Schema({
-    title: { type: String },
-    releaseYear: { type: Number },
-    genre: { type: String },
-    directors: { type: mongoose_1.Schema.Types.ObjectId, ref: 'Directeur' },
+    title: { type: String, required: true },
+    releaseYear: { type: Number, required: true },
+    genre: { type: String, required: true },
+    directors: [{ type: mongoose_1.Schema.Types.ObjectId, ref: 'Directeur' }]
 });
 const FilmModel = mongoose_1.default.model('Film', FilmSchema);
 exports.default = FilmModel;

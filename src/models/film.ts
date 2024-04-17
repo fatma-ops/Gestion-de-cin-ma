@@ -6,14 +6,15 @@ export interface IFilm extends Document {
     releaseYear: number; 
     genre: string; 
     directors: IDirector[];
-    }
+}
 
 const FilmSchema : Schema = new Schema ({
-    title: {type : String},
-    releaseYear: {type : Number}, 
-    genre: {type : String},
-    directors: {type: Schema.Types.ObjectId,ref:'Directeur'},
-    }
-);
+    title: { type: String, required: true },
+    releaseYear: { type: Number, required: true }, 
+    genre: { type: String, required: true },
+    directors: [{ type: Schema.Types.ObjectId, ref: 'Directeur' }]
+});
+
 const FilmModel = mongoose.model<IFilm>('Film', FilmSchema);
 export default FilmModel;
+
