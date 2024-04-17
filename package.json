@@ -1,0 +1,25 @@
+{
+  "name": "gestion-de-cin-ma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatma-ops/Gestion-de-cin-ma.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatma-ops/Gestion-de-cin-ma/issues"
+  },
+  "homepage": "https://github.com/fatma-ops/Gestion-de-cin-ma#readme",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.5"
+  }
+}
